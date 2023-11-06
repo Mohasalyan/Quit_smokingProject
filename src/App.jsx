@@ -1,35 +1,71 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import Home from './pages/home/Home';
+import SignIn from './Auth/SignIn/SignIn';
+import ContactUs from './pages/contact/ContactUs';
+import NotFound from './pages/notFound/NotFound';
+import Profile from './pages/profile/Profile';
+import QuitSmoking from './pages/profile/quit_smoking/QuitSmoking';
+import TaskHistory from './pages/profile/quit_smoking/TaskHistory';
+import Blogs from './pages/Blogs/Blogs';
+import Info_blog from './pages/Blogs/blog/Info-blog';
+import { ContextAuthProvider } from "./Auth/ConditionAuth";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <>
+          <Header />
+          <Outlet />
+          <Footer />
+        </>
+      ),
+      children: [
+        { path: "/", element: <Home /> },
+        {
+          path: "/sign-in",
+          element: <SignIn />,
+        },
+        {
+          path: "/contact-us",
+          element: <ContactUs />,
+        },
+        {
+          path: "*",
+          element: <NotFound />,
+        },
+        {
+          path: "/profile",
+          element: <Profile />,
+        },
+        {
+          path: "/quit-smoking",
+          element: <QuitSmoking />,
+        },
+        {
+          path: "/task-history",
+          element: <TaskHistory />,
+        },
+        {
+          path: "/blogs",
+          element: <Blogs />,
+        },
+        {
+          path: "/blog/:blogId",
+          element: <Info_blog />,
+        },
+      ],
+    },
+  ]);
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <ContextAuthProvider>
+      <RouterProvider router={router} />
+    </ContextAuthProvider>
+  );
 }
 
-export default App
+export default App;

@@ -1,69 +1,148 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  border: none;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+::-webkit-scrollbar {
+  width: 9px;
 }
-a:hover {
-  color: #535bf2;
+::-webkit-scrollbar-track {
+  background: #b7b7b7;
+}
+::-webkit-scrollbar-thumb {
+  background: #111;
+  border-radius: 20px;
+}
+
+img,
+video {
+  width: 100%;
 }
 
 body {
-  margin: 0;
+  background: url("../public/bg.webp") no-repeat;
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+}
+.container img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.quit_smoking_text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #1116;
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+}
+.text_quit_smoking {
+  font-size: 3rem;
+  line-height: 2.5rem;
+  text-shadow: 1px 1px 11px #fff;
+  font-family: system-ui;
+}
+.info_text_quit_smoking {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+.smoking_text {
+  width: 30%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  background: #11111180;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 3px 5px #111;
+  text-align: center;
+  animation: show-modal 1s ease-in-out;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+@keyframes show-modal {
+  0% {
+    transform: scale(0);
   }
-  a:hover {
-    color: #747bff;
+  60% {
+    transform: scale(1.1);
   }
-  button {
-    background-color: #f9f9f9;
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+section {
+  width: 90%;
+  margin: auto;
+  width: 90%;
+  margin: auto;
+  background: #11111129;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+/* hidden_all_items */
+.hidden_all_items {
+  transform: scale(0);
+}
+
+.show_all_items {
+  animation: show-modal 1s ease-in-out;
+}
+
+@keyframes show-all_items {
+  0% {
+    transform: scale(0);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* END hidden_all_items */
+
+@media (max-width: 1024px) {
+  .smoking_text {
+    width: 90%;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  .text_quit_smoking {
+    font-size: 1rem;
+  }
+  .info_text_quit_smoking {
+    font-size: 1rem;
+    line-height: 2.5rem;
+  }
+  section {
+    width: 95%;
   }
 }
