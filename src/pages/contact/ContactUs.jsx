@@ -100,13 +100,13 @@ const ContactUs = () => {
         <p className="text">Call us: 123456789</p>
 
         <div className="icon">
-          <a href="#">
+          <a href="https://www.facebook.com/FALCONMM">
             <FaFacebookF />
           </a>
           <a href="#">
             <FaTwitter />
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/mohammed_s_alyan/">
             <FaInstagram />
           </a>
           <a href="#">
