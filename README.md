@@ -39,9 +39,7 @@ The "Quit Smoking" app is a tool that aims to assist individuals in their journe
 
 ## Getting Started
 
-To get started with this project, you need to have Node.js and npm (Node Package Manager) installed on your computer.
-
-1. Clone the repository:
+https://melodious-hotteok-b45491.netlify.app/
 
 ## Usage
 
