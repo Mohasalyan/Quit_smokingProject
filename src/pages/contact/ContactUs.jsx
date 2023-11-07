@@ -97,7 +97,7 @@ const ContactUs = () => {
       </div>
 
       <div className="text_call">
-        <p className="text">Call us: 123456789</p>
+        <p className="text">Call us: 0546103029</p>
 
         <div className="icon">
           <a href="https://www.facebook.com/FALCONMM">
