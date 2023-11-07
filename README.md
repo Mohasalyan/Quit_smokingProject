@@ -40,6 +40,7 @@ The "Quit Smoking" app is a tool that aims to assist individuals in their journe
 ## Getting Started
 
 https://melodious-hotteok-b45491.netlify.app/
+https://melodious-hotteok-b45491.netlify.app
 
 ## Usage
 
